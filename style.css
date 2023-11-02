@@ -1,0 +1,591 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --page-height: 100vh;
+  --all-width: 100vw;
+}
+html {
+  scroll-behavior: smooth;
+}
+.page {
+  margin-bottom: 50px;
+  position: relative;
+  min-height: var(--page-height) !important;
+}
+body {
+  width: 100vw;
+  min-height: var(--page-height);
+  background: linear-gradient(45deg, #072e33, #294d61);
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-bar {
+  width: var(--all-width);
+  height: calc(10 / 100 * var(--page-height));
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.nav-bar ul {
+  display: flex;
+  flex-direction: row;
+  padding: 50px;
+  list-style-type: none;
+}
+.nav-bar ul li a {
+  color: aliceblue;
+  margin-left: 50px;
+  font-size: 19px;
+  font-weight: 700;
+  font-family: "Courier New", monospace;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+.nav-bar ul li a:hover {
+  color: lightgreen;
+  scale: 1.2;
+  text-decoration: underline;
+}
+.mylogo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  left: 20px;
+  top: 0;
+  animation: logoRoll 6000ms linear infinite;
+}
+
+@keyframes logoRoll {
+  0%,
+  20%,
+  50%,
+  60% {
+    transform: rotateX(0deg);
+  }
+  80% {
+    transform: rotateX(180deg);
+  }
+  100% {
+    transform: rotateX(360deg);
+  }
+}
+
+.company-name {
+  width: var(--all-width);
+  height: calc(50 / 100 * var(--page-height));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  position: relative;
+}
+.company-name h1 {
+  font-size: 5em;
+  letter-spacing: 15px;
+  font-weight: 700;
+  background: linear-gradient(45deg, rgb(198, 193, 223), rgb(5, 182, 241));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.company-name h4 {
+  font-size: 1.5em;
+  letter-spacing: 5px;
+  position: absolute;
+  bottom: 50px;
+  background: linear-gradient(45deg, rgb(198, 193, 223), rgb(5, 182, 241));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.side-bar {
+  width: var(--all-width);
+  height: calc(20 / 100 * var(--page-height));
+  padding: 50px;
+  font-size: 19px;
+  font-family: "Courier New", Courier, monospace;
+  color: aliceblue;
+}
+.side-bar ul li {
+  margin-bottom: 15px;
+  list-style-type: none;
+  cursor: pointer;
+}
+.side-bar ul li:hover {
+  color: black;
+}
+a {
+  text-decoration: none;
+  font-weight: 700;
+  color: orange;
+}
+a:hover {
+  color: lightgreen;
+  font-weight: 900;
+}
+.contact {
+  width: calc(50 / 100 * var(--all-width));
+  height: calc(15 / 100 * var(--page-height));
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: calc(25 / 100 * var(--all-width));
+}
+.contact i {
+  padding: 20px;
+  font-size: 40px;
+  margin-right: 20px;
+  margin-left: 20px;
+  transition: all 200ms ease-in-out;
+}
+.contact i:hover {
+  cursor: pointer;
+  scale: 1.2;
+}
+#facebook {
+  color: rgb(11, 149, 190);
+}
+#instagram {
+  color: rgb(224, 116, 14);
+}
+#github {
+  color: black;
+}
+#phone {
+  color: aliceblue;
+  font-size: 35px;
+  position: relative;
+}
+
+.about {
+  width: var(--all-width);
+  height: calc(var(--page-height));
+}
+.about {
+  display: flex;
+  flex-direction: column;
+}
+.heading {
+  width: calc(var(--all-width));
+  height: calc(15 / 100 * var(--page-height));
+}
+.heading h1 {
+  margin-left: 60px;
+  font-family: sans-serif;
+  font-size: 7em;
+  background: linear-gradient(45deg, rgb(198, 193, 223), rgb(5, 182, 241));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.myself {
+  width: calc(var(--all-width));
+  height: calc(80 / 100 * var(--page-height));
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.card {
+  width: calc(var(--all-width) * 45 / 100);
+  height: calc(50 / 100 * var(--page-height));
+  border-radius: 20px 0 20px 0;
+  box-shadow: 2px 2px 2px 2px rgba(182, 179, 179, 0.281);
+  transition: all 200ms ease-in-out;
+}
+.card:hover {
+  scale: 1.05;
+  box-shadow: 2px 2px 2px 2px rgba(182, 179, 179, 0.658);
+}
+.studies {
+  color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.studies ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1rem;
+  margin-left: 5px;
+}
+.list-two {
+  margin-left: 60px !important;
+  list-style-type: circle !important;
+}
+.studies h1 {
+  background: linear-gradient(45deg, rgb(198, 193, 223), rgb(5, 182, 241));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-left: 30px !important;
+}
+.myself .image {
+  background: url(image.jpg);
+  background-repeat: none;
+  background-size: cover;
+}
+.border {
+  width: calc(60 / 100 * var(--all-width));
+  height: 1px;
+  background: linear-gradient(45deg, rgb(198, 193, 223), rgb(5, 182, 241));
+  border-radius: 10px;
+  margin-left: calc(20 / 100 * var(--all-width));
+  position: absolute;
+  top: -20px;
+}
+
+.projects {
+  width: var(--all-width);
+  height: calc(var(--page-height));
+  display: flex;
+  flex-direction: column;
+}
+.project-list {
+  width: var(--all-width);
+  height: calc(var(--page-height) * 80 / 100);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.project {
+  width: calc(30 / 100 * var(--all-width));
+  height: calc(var(--page-height) * 70 / 100);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.project .image {
+  width: 100%;
+  height: 50%;
+  transition: all 200ms ease-in-out;
+}
+.project .image:hover {
+  scale: 1.05;
+  box-shadow: 2px 2px 2px 2px rgba(182, 179, 179, 0.658);
+}
+.description {
+  width: 100%;
+  height: 40%;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1rem;
+  line-break: normal;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+}
+.description a {
+  cursor: pointer;
+  color: orange;
+  position: absolute;
+  left: 0;
+  bottom: -20px;
+}
+.description a:hover {
+  color: lightgreen;
+}
+.calender {
+  background: url(calender.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 20px 0 20px 0;
+  box-shadow: 2px 2px 2px 2px rgba(182, 179, 179, 0.281);
+}
+.game {
+  background: url(game.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 20px 0 20px 0;
+  box-shadow: 2px 2px 2px 2px rgba(182, 179, 179, 0.281);
+}
+.music {
+  background: url(music.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 20px 0 20px 0;
+  box-shadow: 2px 2px 2px 2px rgba(182, 179, 179, 0.281);
+}
+.projects a {
+  margin-left: 50%;
+}
+.join {
+  width: var(--all-width);
+  height: calc(var(--page-height));
+  display: flex;
+  flex-direction: column;
+}
+.form {
+  width: 500px;
+  height: calc(var(--page-height) * 80 / 100);
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  gap: 30px;
+}
+.information {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px;
+}
+label {
+  position: relative;
+}
+.inputs {
+  width: 400px;
+  height: 40px;
+  padding: 15px;
+  padding-left: 30px;
+  background: linear-gradient(
+    45deg,
+    rgba(198, 193, 223, 0.685),
+    rgba(5, 182, 241, 0.596)
+  );
+  border: none;
+  border-radius: 10px 0 10px 0;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 16px;
+}
+.inputs::placeholder,
+textarea::placeholder {
+  color: white;
+  padding: 5px;
+  font-family: "Courier New", Courier, monospace;
+}
+.inputs:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+label i {
+  color: black;
+  position: absolute;
+  top: 13px;
+  font-size: 16px;
+  left: 10px;
+}
+select {
+  width: 200px;
+  height: 40px;
+  background: linear-gradient(
+    45deg,
+    rgba(198, 193, 223, 0.637),
+    rgba(5, 182, 241, 0.466)
+  );
+  color: white;
+  font-size: 16px;
+  font-family: "Courier New", Courier, monospace;
+  border-radius: 10px 0 10px 0;
+  border: none;
+}
+select option {
+  background: rgba(0, 0, 0, 0.623);
+  border: none;
+}
+textarea {
+  background: linear-gradient(
+    45deg,
+    rgba(198, 193, 223, 0.637),
+    rgba(5, 182, 241, 0.466)
+  );
+  color: white;
+  font-size: 16px;
+  font-family: "Courier New", Courier, monospace;
+  border-radius: 10px 0 10px 0;
+  padding-left: 10px;
+}
+.terms-label {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  color: white;
+  font-size: 16px;
+  font-family: "Courier New", Courier, monospace;
+  margin-left: 10px;
+}
+.btn {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.submit {
+  text-transform: uppercase;
+  width: 150px;
+  height: 40px;
+  font-size: 20px;
+  font-family: "Courier New", Courier, monospace;
+  background: linear-gradient(
+    45deg,
+    rgba(198, 193, 223, 0.637),
+    rgba(5, 182, 241, 0.466)
+  );
+  border: none;
+  border-radius: 10px 0 10px 0;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  color: white;
+}
+.submit:hover {
+  background: linear-gradient(
+    45deg,
+    rgba(198, 193, 223, 0.918),
+    rgba(5, 182, 241, 0.856)
+  );
+  color: black;
+}
+.form h2 {
+  background: linear-gradient(45deg, rgb(198, 193, 223), rgb(5, 182, 241));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.special {
+  width: calc(60 / 100 * var(--all-width));
+  height: 1px;
+  background: linear-gradient(45deg, rgb(198, 193, 223), rgb(5, 182, 241));
+  border-radius: 10px;
+  margin-left: calc(20 / 100 * var(--all-width));
+  position: absolute;
+  top: -20px;
+}
+.humberger .drop-list {
+  display: none;
+}
+
+@media (max-width: 1230px) {
+  .company-name h1 {
+    font-size: 4em;
+    letter-spacing: 7px;
+  }
+}
+@media (max-width: 880px) {
+  .company-name h1 {
+    font-size: 3em;
+  }
+}
+@media (max-width: 730px) {
+  .nav-bar,
+  .company-name h1,
+  .company-name h4 {
+    display: none;
+  }
+  .side-bar {
+    position: absolute;
+    bottom: 200px;
+  }
+  .mylogo {
+    top: 0;
+  }
+  .humberger {
+    width: 25px;
+    height: 20px;
+    border-top: 3px solid white;
+    border-bottom: 3px solid white;
+    position: absolute;
+    right: 40px;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 12;
+    transition: all 200ms ease-in-out;
+  }
+  .humberger .inside {
+    width: 100%;
+    height: 3px;
+    background: white;
+  }
+
+  .clicked {
+    width: 25px;
+    height: 20px;
+    position: absolute;
+    right: 40px;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 12;
+    transition: all 200ms ease-in-out;
+  }
+  .clicked::after {
+    content: "";
+    width: 25px;
+    height: 3px;
+    transform: rotate(45deg);
+    background: white;
+    position: absolute;
+  }
+  .clicked::before {
+    content: "";
+    width: 25px;
+    height: 3px;
+    transform: rotate(-45deg);
+    background: white;
+    position: absolute;
+  }
+
+  .clicked .drop-list {
+    width: 250px;
+    height: 300px;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    transition: all 200ms ease-in-out;
+  }
+  .clicked .drop-list ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    list-style-type: none;
+  }
+  .clicked .drop-list ul li {
+    margin-bottom: 50px;
+    font-size: 19px;
+    font-weight: 700;
+    font-family: "Courier New", monospace;
+    transition: all 200ms ease-in-out;
+  }
+  .clicked .drop-list a {
+    color: aliceblue !important;
+  }
+  .clicked .drop-list a:hover {
+    color: lightgreen !important;
+  }
+}
+.number::after {
+  content: "0720128694";
+  font-size: 16px !important;
+  position: absolute;
+  top: -12px;
+  left: -5px;
+  cursor: default !important;
+}
+.number::after:hover {
+  scale: 1 !important;
+}
